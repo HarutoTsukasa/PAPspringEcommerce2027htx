@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Panel de administración de ejemplo de Nova Market.">
+  <title>Nova Market | Administración</title>
+  <link rel="icon" type="image/jpeg" href="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=64&h=64&fit=crop&crop=center">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand bg-body border-bottom">
+    <div class="container-fluid px-3 px-lg-4">
+      <a class="navbar-brand d-flex align-items-center" href="admin.html">
+        <span class="brand-mark">N</span>Nova Market <span class="text-body-secondary fw-normal ms-2 small">/ Admin</span>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <a class="btn btn-link btn-sm d-none d-sm-inline" href="index.html">Ver tienda</a>
+        <button class="btn btn-outline-primary btn-sm theme-toggle" id="themeToggle" type="button">
+          <span id="themeIcon" aria-hidden="true">☾</span>
+          <span id="themeLabel">Tema oscuro</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <!-- Navegación del dashboard -->
+        <aside class="col-md-3 col-lg-2 dashboard-sidebar">
+          <p class="small text-uppercase fw-semibold text-body-secondary px-2 mb-2">Administración</p>
+          <nav class="nav nav-pills flex-column" aria-label="Menú de administración">
+            <a class="nav-link active" href="#resumen">Resumen</a>
+            <a class="nav-link" href="#inventario">Productos</a>
+            <a class="nav-link" href="#actividad">Actividad reciente</a>
+            <a class="nav-link" href="index.html">Volver al sitio</a>
+          </nav>
+        </aside>
+
+        <section class="col-md-9 col-lg-10 dashboard-main" id="resumen">
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mb-4">
+            <div>
+              <p class="text-uppercase small fw-semibold text-primary mb-1">Panel general</p>
+              <h1 class="h2 section-heading mb-1">Dashboard</h1>
+              <p class="text-body-secondary mb-0">Vista demostrativa con información estática.</p>
+            </div>
+            <span class="badge text-bg-light border align-self-start align-self-sm-center">Datos de ejemplo</span>
+          </div>
+
+          <!-- Indicadores estáticos -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3 mb-4">
+            <div class="col">
+              <article class="card metric-card rounded-3 p-3">
+                <span class="metric-label">Ventas del mes</span>
+                <p class="metric-value">$8.450.000</p>
+                <span class="small text-body-secondary">Valor ilustrativo</span>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card metric-card rounded-3 p-3">
+                <span class="metric-label">Pedidos</span>
+                <p class="metric-value">128</p>
+                <span class="small text-body-secondary">Registros de ejemplo</span>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card metric-card rounded-3 p-3">
+                <span class="metric-label">Productos activos</span>
+                <p class="metric-value">36</p>
+                <span class="small text-body-secondary">En el catálogo de muestra</span>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card metric-card rounded-3 p-3">
+                <span class="metric-label">Clientes registrados</span>
+                <p class="metric-value">94</p>
+                <span class="small text-body-secondary">Cifra demostrativa</span>
+              </article>
+            </div>
+          </div>
+
+          <!-- Tabla estática inicializada con DataTables -->
+          <section id="inventario" class="mb-4">
+            <div class="mb-3">
+              <h2 class="h4 section-heading mb-1">Inventario de productos</h2>
+              <p class="text-body-secondary small mb-0">La búsqueda, ordenación y paginación son proporcionadas por DataTables.</p>
+            </div>
+            <div class="table-panel p-3">
+              <div class="table-responsive">
+                <table id="productsTable" class="table table-hover align-middle w-100">
+                  <thead>
+                    <tr>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Categoría</th>
+                      <th scope="col">Precio</th>
+                      <th scope="col">Stock</th>
+                      <th scope="col">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Reloj minimalista</td>
+                      <td>Accesorios</td>
+                      <td data-order="129900">$129.900</td>
+                      <td>24</td>
+                      <td><span class="badge text-bg-success">Activo</span></td>
+                    </tr>
+                    <tr>
+                      <td>Audífonos inalámbricos</td>
+                      <td>Tecnología</td>
+                      <td data-order="189900">$189.900</td>
+                      <td>12</td>
+                      <td><span class="badge text-bg-success">Activo</span></td>
+                    </tr>
+                    <tr>
+                      <td>Mochila urbana</td>
+                      <td>Complementos</td>
+                      <td data-order="149900">$149.900</td>
+                      <td>8</td>
+                      <td><span class="badge text-bg-warning">Stock bajo</span></td>
+                    </tr>
+                    <tr>
+                      <td>Lámpara de escritorio</td>
+                      <td>Hogar</td>
+                      <td data-order="89900">$89.900</td>
+                      <td>31</td>
+                      <td><span class="badge text-bg-success">Activo</span></td>
+                    </tr>
+                    <tr>
+                      <td>Botella térmica</td>
+                      <td>Hogar</td>
+                      <td data-order="59900">$59.900</td>
+                      <td>0</td>
+                      <td><span class="badge text-bg-secondary">Agotado</span></td>
+                    </tr>
+                    <tr>
+                      <td>Teclado compacto</td>
+                      <td>Tecnología</td>
+                      <td data-order="219900">$219.900</td>
+                      <td>16</td>
+                      <td><span class="badge text-bg-success">Activo</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="actividad" class="table-panel p-3">
+            <h2 class="h5 section-heading mb-3">Actividad reciente</h2>
+            <div class="table-responsive">
+              <table class="table table-sm align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Referencia</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#NM-1024</td>
+                    <td>Laura Gómez</td>
+                    <td>18/11/2026</td>
+                    <td><span class="badge text-bg-success">Entregado</span></td>
+                  </tr>
+                  <tr>
+                    <td>#NM-1023</td>
+                    <td>Andrés Ruiz</td>
+                    <td>17/11/2026</td>
+                    <td><span class="badge text-bg-info">En camino</span></td>
+                  </tr>
+                  <tr>
+                    <td>#NM-1022</td>
+                    <td>Camila Torres</td>
+                    <td>16/11/2026</td>
+                    <td><span class="badge text-bg-warning">Pendiente</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer py-3">
+    <div class="container-fluid px-3 px-lg-4 d-flex flex-column flex-sm-row justify-content-between gap-2 small text-body-secondary">
+      <span>© 2026 Nova Market - Panel de administración</span>
+      <a href="index.html">Regresar al sitio público</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap y DataTables. jQuery se incluye porque DataTables lo requiere. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script>
+    // Inicialización de DataTables sobre la tabla estática del inventario.
+    $(document).ready(function () {
+      $('#productsTable').DataTable({
+        pageLength: 5,
+        lengthChange: false,
+        language: {
+          url: 'https://cdn.datatables.net/plug-ins/2.1.8/i18n/es-ES.json'
+        }
+      });
+    });
+  </script>
+</body>
+</html>
