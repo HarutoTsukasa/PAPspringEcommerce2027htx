@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import com.htx.ecommerce.model.Producto;
 import com.htx.ecommerce.repository.IProductoRepository;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
-public class ProductoServiceImplement implements ProductoService {
+public class ProductoServiceImplement implements IProductoService {
 
 	private final IProductoRepository productoRepo;
 
