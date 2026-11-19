@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 import com.htx.ecommerce.model.Producto;
 import com.htx.ecommerce.repository.IProductoRepository;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @Service
 public class ProductoServiceImplement implements ProductoService {
 
-	private IProductoRepository productoRepo;
+	private final IProductoRepository productoRepo;
 
 	@Override
 	public Producto save(Producto producto) {

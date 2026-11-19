@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,7 @@ public class Producto {
 	private Double precio;
 	private Integer cantidad;
 
+	@JoinColumn(name = "id_usuario")
 	@ManyToOne
 	private Usuario usuario;
 
